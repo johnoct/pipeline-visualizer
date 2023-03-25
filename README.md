@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+Pipeline Visualization
+======================
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application that visualizes Tekton Pipelineruns, displaying the sequence of tasks and their corresponding YAML specifications.
 
-## Available Scripts
+Table of Contents
+-----------------
 
-In the project directory, you can run:
+- [Pipeline Visualization](#pipeline-visualization)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Installation and Setup](#installation-and-setup)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-### `npm start`
+Features
+--------
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+*   Visualizes Pipelinerun tasks using D3
+*   Shows the YAML spec of the tasks on hover
+*   Modern and user-friendly UI with Material Design
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Installation and Setup
+----------------------
 
-### `npm test`
+To get started, clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
 
-### `npm run build`
+```bash
+git clone https://github.com/yourusername/pipeline-visualization.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Navigate to the project directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+bash
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd pipeline-visualization
+```
 
-### `npm run eject`
+Install the required dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Start the development server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+bash
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The application should now be running on [http://localhost:3000](http://localhost:3000).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Usage
+-----
 
-### Code Splitting
+1.  Open the application in your browser.
+2.  Paste your Pipelinerun YAML into the input box.
+3.  The application will automatically render the pipeline visualization.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributing
+------------
 
-### Analyzing the Bundle Size
+If you'd like to contribute to this project, please follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1.  Fork the repository.
+2.  Create a new branch with a descriptive name.
+3.  Make your changes and commit them to your branch.
+4.  Create a pull request with a detailed description of your changes.
 
-### Making a Progressive Web App
+License
+-------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
