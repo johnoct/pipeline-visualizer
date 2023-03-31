@@ -1,3 +1,4 @@
+import { Flex, Spacer } from '@chakra-ui/layout';
 import React, { useCallback } from 'react';
 import ReactFlow, {
   MiniMap,
@@ -9,6 +10,7 @@ import ReactFlow, {
 } from 'reactflow';
 
 import 'reactflow/dist/style.css';
+import PipelineControl from './components/PipelineControl';
 
 const initialNodes = [
   { id: 'build', position: { x: 250, y: 250 }, data: { label: 'build' }, type: 'input' },
@@ -27,17 +29,25 @@ export default function App() {
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        onConnect={onConnect}
-      >
-        <Controls />
-        <MiniMap />
-        <Background variant="dots" gap={12} size={1} />
-      </ReactFlow>
+      <Flex justifyContent="center" alignItems="center" height="100%">
+        {/* create a header on top*/}
+        <h1>Pipeline Visualizer</h1>
+        <Spacer />
+        {/* create a react flow component */}
+        <ReactFlow
+          nodes={nodes}
+          edges={edges}
+          onNodesChange={onNodesChange}
+          onEdgesChange={onEdgesChange}
+          onConnect={onConnect}
+          fitView
+        >
+          <PipelineControl />
+          <Controls />
+          <MiniMap />
+          <Background variant="dots" gap={12} size={1} />
+        </ReactFlow>
+      </Flex>
     </div>
   );
 }
