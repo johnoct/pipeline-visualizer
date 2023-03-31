@@ -17,9 +17,9 @@ Table of Contents
 Features
 --------
 
-*   Visualizes Pipelinerun tasks using D3
-*   Shows the YAML spec of the tasks on hover
-*   Modern and user-friendly UI with Material Design
+*   [ ] Visualizes Pipelinerun tasks using ReactFlow
+*   [ ] Shows the YAML spec of the tasks on hover
+*   [ ] Modern and user-friendly UI with Chakra UI
 
 Installation and Setup
 ----------------------
@@ -53,10 +53,10 @@ Start the development server:
 bash
 
 ```bash
-npm start
+npm run dev
 ```
 
-The application should now be running on [http://localhost:3000](http://localhost:3000).
+The application should now be running on [http://localhost:5173](http://localhost:5173).
 
 Usage
 -----
