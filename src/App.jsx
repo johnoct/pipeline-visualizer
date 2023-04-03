@@ -1,4 +1,4 @@
-import { Flex, Spacer } from '@chakra-ui/layout';
+import { Flex, Spacer, Box } from '@chakra-ui/layout';
 import React, { useCallback } from 'react';
 import ReactFlow, {
   MiniMap,
@@ -26,28 +26,28 @@ export default function App() {
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
+  const proOptions = { hideAttribution: true };
 
   return (
-    <div style={{ width: '100vw', height: '100vh' }}>
-      <Flex justifyContent="center" alignItems="center" height="100%">
-        {/* create a header on top*/}
-        <h1>Pipeline Visualizer</h1>
-        <Spacer />
-        {/* create a react flow component */}
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          onConnect={onConnect}
-          fitView
-        >
-          <PipelineControl />
-          <Controls />
-          <MiniMap />
-          <Background variant="dots" gap={12} size={1} />
-        </ReactFlow>
-      </Flex>
-    </div>
+    <Box width="100vh" height="100vh">
+      {/* create a header on top*/}
+      {/* <h1>Pipeline Visualizer</h1> */}
+      {/* create a react flow component */}
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        proOptions={proOptions}
+        fitView
+      >
+        <PipelineControl />
+        <Controls />
+        <MiniMap />
+        <Background variant="dots" gap={12} size={1} />
+      </ReactFlow>
+      {/* </Flex> */}
+    </Box>
   );
 }
