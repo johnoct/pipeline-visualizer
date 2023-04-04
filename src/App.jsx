@@ -1,4 +1,4 @@
-import { Flex, Spacer, Box } from '@chakra-ui/layout';
+import { Flex, Spacer, Box, Heading, Grid, GridItem } from '@chakra-ui/layout';
 import React, { useCallback } from 'react';
 import ReactFlow, {
   MiniMap,
@@ -29,10 +29,7 @@ export default function App() {
   const proOptions = { hideAttribution: true };
 
   return (
-    <Box width="100vh" height="100vh">
-      {/* create a header on top*/}
-      {/* <h1>Pipeline Visualizer</h1> */}
-      {/* create a react flow component */}
+    <Flex width="100vw" height="100vh">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -40,14 +37,23 @@ export default function App() {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         proOptions={proOptions}
-        fitView
+        fitView={true}
       >
-        <PipelineControl />
+        <Grid templateAreas={`"header header" "sidebar content"`} gridTemplateColumns={'100px 1fr'} gridTemplateRows={'100px 1fr'} h="100vh" >
+          <GridItem area="header" bg="white" height="100%" width="100%">
+            <Flex direction="row" align="center" justify="center" wrap="wrap" >
+              <Box p="20" bg="white" width="100%">
+                <Heading as='h2' size='2xl'>
+                  Pipeline Visualizer</Heading>
+              </Box>
+            </Flex>
+          </GridItem>
+        </Grid>
+
         <Controls />
         <MiniMap />
         <Background variant="dots" gap={12} size={1} />
       </ReactFlow>
-      {/* </Flex> */}
-    </Box>
+    </Flex >
   );
 }
