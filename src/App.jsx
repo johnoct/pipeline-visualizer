@@ -30,30 +30,33 @@ export default function App() {
 
   return (
     <Flex width="100vw" height="100vh">
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        onConnect={onConnect}
-        proOptions={proOptions}
-        fitView={true}
-      >
-        <Grid templateAreas={`"header header" "sidebar content"`} gridTemplateColumns={'100px 1fr'} gridTemplateRows={'100px 1fr'} h="100vh" >
-          <GridItem area="header" bg="white" height="100%" width="100%">
-            <Flex direction="row" align="center" justify="center" wrap="wrap" >
-              <Box p="20" bg="white" width="100%">
-                <Heading as='h2' size='2xl'>
-                  Pipeline Visualizer</Heading>
-              </Box>
-            </Flex>
-          </GridItem>
-        </Grid>
+      <Grid templateAreas={`"header header" "content content"`} gridTemplateColumns={'20% 1fr'} gridTemplateRows={'8% 1fr'} h="100vh" w="100vw" >
+        <GridItem area="header" bg="white" height="100%" width="100%">
+          <Flex flexDirection="row" justifyContent='center' alignItems='center' gap='2' width="100%" height="100%" >
+            <Heading as='h1' >
+              Pipeline Visualizer</Heading>
+            <Spacer />
+          </Flex>
+        </GridItem>
+        <GridItem area="content" bg="white" height="100%" width="100%">
+          {/* <Heading as="h1">Content</Heading> */}
+          <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            onNodesChange={onNodesChange}
+            onEdgesChange={onEdgesChange}
+            onConnect={onConnect}
+            proOptions={proOptions}
+            fitView={true}
+          >
 
-        <Controls />
-        <MiniMap />
-        <Background variant="dots" gap={12} size={1} />
-      </ReactFlow>
+            <Controls />
+            <MiniMap />
+            <Background variant="dots" gap={12} size={1} />
+          </ReactFlow>
+        </GridItem>
+      </Grid>
+
     </Flex >
   );
 }
